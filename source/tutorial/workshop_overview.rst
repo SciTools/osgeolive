@@ -25,5 +25,6 @@ Workshop outline
    osgeo_stack
 
    advanced_wps
+   advanced_wps_iris
 
    advanced_wxs
