@@ -1,0 +1,30 @@
+[Hello]
+ Title = Return a hello message.
+ Abstract = Create a welcome string.
+ processVersion = 2
+ storeSupported = true
+ statusSupported = true
+ serviceProvider = test_service
+ serviceType = Python
+ <DataInputs>
+  [name]
+   Title = Input string
+   Abstract = The string to insert in the hello message.
+   minOccurs = 1
+   maxOccurs = 1
+   <LiteralData>
+       dataType = string
+       <Default />
+   </LiteralData>
+ </DataInputs>
+ <DataOutputs>
+  [Result]
+   Title = The resulting string
+   Abstract = The hello message containing the input string
+   <ComplexData>
+   <LiteralData>
+       dataType = string
+       <Default />
+   </LiteralData>
+   </ComplexData>
+ </DataOutputs>
