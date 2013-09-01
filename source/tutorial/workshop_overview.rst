@@ -26,3 +26,4 @@ Workshop outline
 
    advanced_wps
 
+   advanced_wxs
