@@ -1,0 +1,48 @@
+[RollingWindow]
+ Title = Return a hello message.
+ Abstract = Create a welcome string.
+ processVersion = 2
+ storeSupported = true
+ statusSupported = true
+ serviceProvider = rolling_window
+ serviceType = Python
+ <DataInputs>
+  [lat]
+   Title = Latitude of sample point
+   Abstract = Latitude of sample point.
+   minOccurs = 1
+   maxOccurs = 1
+   <LiteralData>
+       dataType = float
+       <Default />
+   </LiteralData>
+  [lon]
+   Title = Longitude of sample point
+   Abstract = Longitude of sample point.
+   minOccurs = 1
+   maxOccurs = 1
+   <LiteralData>
+       dataType = float
+       <Default />
+   </LiteralData>
+  [agg]
+   Title = Aggregation
+   Abstract = Aggregation parameters for rolling window.
+   minOccurs = 1
+   maxOccurs = 1
+   <LiteralData>
+       dataType = string
+       <Default />
+   </LiteralData>
+ </DataInputs>
+ <DataOutputs>
+  [Result]
+   Title = The resulting graph as a PNG.
+   Abstract = The resulting graph as a PNG.
+   <ComplexData>
+     <Default>
+       mimeType = image/png
+       encoding = base64
+     </Default>
+   </ComplexData>
+ </DataOutputs>

@@ -1,0 +1,74 @@
+<html>
+<head>
+    <title>OpenLayers Example</title>
+    <script src="http://openlayers.org/api/OpenLayers.js"></script>
+</head>
+<body>
+    <div style="width:700px; height:400px" id="map"></div>
+    <p>Click on map to show time-series graph from WPS.</p>
+    <p>
+        <label for="agg">Aggregate</label>        
+        <select name="agg" id="agg" onchange="aggChange()">
+            <option value="mean_5">5 year average</option>
+            <option value="mean_10">10 year average</option>
+            <option value="mean_30">30 year average</option>
+            <option value="max_3">3 year maximum</option>
+            <option value="max_10">10 year maximum</option>
+            <option value="max_30">30 year maximum</option>
+        </select>
+    </p>
+
+    <script defer="defer" type="text/javascript">
+        var map = new OpenLayers.Map('map');
+        var wms = new OpenLayers.Layer.WMS("OpenLayers WMS",
+            "http://vmap0.tiles.osgeo.org/wms/vmap0", {layers: 'basic'});
+        map.addLayer(wms);
+        map.setCenter(new OpenLayers.LonLat(-95, 38), 4);  // Look at USA
+
+        var position = {};
+
+        function ensurePopup() {
+            if (map.popups.length == 0) {
+                var popup = new OpenLayers.Popup.FramedCloud(
+                    "graph_popup", position, null,
+                    '<canvas id="graph" width="300px" height="200px"/>',
+                    null, true);
+                map.addPopup(popup);
+            } else {
+                var popup = map.popups[0];
+                popup.lonlat = position;
+
+                var canvas = document.getElementById('graph');
+                var ctx = canvas.getContext('2d');
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+                popup.show();
+            }
+        }
+
+        function updateGraph() {
+            var canvas = document.getElementById('graph');
+            var image = new Image();
+            var ctx = canvas.getContext('2d');
+            image.onload = function() {
+                ctx.drawImage(image, 0, 0);
+            }
+            var agg = document.getElementById('agg').value;
+            image.src = 'http://localhost/cgi-bin/zoo_loader.cgi?request=Execute&service=WPS&version=1.0.0&Identifier=RollingWindow&DataInputs=lat=' + position.lat + ';lon=' + position.lon + ';agg=' + agg + '&RawDataOutput=Result@mimeType=image/png';
+        }
+
+        map.events.register("click", map, function(e) {
+            position = map.getLonLatFromPixel(e.xy);
+            ensurePopup();
+            updateGraph();
+        });
+
+        function aggChange() {
+            if (map.popups.length > 0 && map.popups[0].visible()) {
+                updateGraph();
+            }
+        }
+    </script>
+
+</body>
+</html>
