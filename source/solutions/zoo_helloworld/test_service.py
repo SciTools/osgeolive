@@ -1,4 +1,4 @@
-def Hello(conf,inputs,outputs):
-    outputs["Result"]["value"]=\
-            "Hello "+inputs["name"]["value"]+" from the ZOO-Project Python world !"
-    return 3
+def Hello(conf, inputs, outputs):
+    msg = "Hello {} from ZOO!".format(inputs['name']['value'])
+    outputs['Result']['value'] = msg
+    return 3  # SUCCEEDED
