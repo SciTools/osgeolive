@@ -25,9 +25,18 @@
        dataType = float
        <Default />
    </LiteralData>
+  [period]
+   Title = Aggregation period
+   Abstract = Number of years in rolling window.
+   minOccurs = 1
+   maxOccurs = 1
+   <LiteralData>
+       dataType = float
+       <Default />
+   </LiteralData>
   [agg]
-   Title = Aggregation
-   Abstract = Aggregation parameters for rolling window.
+   Title = Aggregation method
+   Abstract = Aggregation method for rolling window.
    minOccurs = 1
    maxOccurs = 1
    <LiteralData>
