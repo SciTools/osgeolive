@@ -1,0 +1,28 @@
+<wps:ProcessDescriptions xmlns:ows="http://www.opengis.net/ows/1.1" xmlns:wps="http://www.opengis.net/wps/1.0.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.opengis.net/wps/1.0.0 http://schemas.opengis.net/wps/1.0.0/wpsDescribeProcess_response.xsd" service="WPS" version="1.0.0" xml:lang="en-US">
+  <ProcessDescription wps:processVersion="2" storeSupported="true" statusSupported="true">
+    <ows:Identifier>Hello</ows:Identifier>
+    <ows:Title>Return a hello message.</ows:Title>
+    <ows:Abstract>Create a welcome string.</ows:Abstract>
+    <DataInputs>
+      <Input minOccurs="1" maxOccurs="1">
+        <ows:Identifier>name</ows:Identifier>
+        <ows:Title>Input string</ows:Title>
+        <ows:Abstract>The string to insert in the hello message.</ows:Abstract>
+        <LiteralData>
+          <ows:DataType ows:reference="http://www.w3.org/TR/xmlschema-2/#string">string</ows:DataType>
+          <ows:AnyValue/>
+        </LiteralData>
+      </Input>
+    </DataInputs>
+    <ProcessOutputs>
+      <Output>
+        <ows:Identifier>Result</ows:Identifier>
+        <ows:Title>The resulting string</ows:Title>
+        <ows:Abstract>The hello message containing the input string</ows:Abstract>
+        <LiteralOutput>
+          <ows:DataType ows:reference="http://www.w3.org/TR/xmlschema-2/#string">string</ows:DataType>
+        </LiteralOutput>
+      </Output>
+    </ProcessOutputs>
+  </ProcessDescription>
+</wps:ProcessDescriptions>

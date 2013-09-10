@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wps:ExecuteResponse xmlns:wps="http://www.opengis.net/wps/1.0.0" xmlns:ows="http://www.opengis.net/ows/1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.opengis.net/wps/1.0.0 http://schemas.opengis.net/wps/1.0.0/wpsExecute_response.xsd" service="WPS" version="1.0.0" xml:lang="en-US" serviceInstance="http://localhost/cgi-bin/zoo_loader.cgi">
+  <wps:Process wps:processVersion="2">
+    <ows:Identifier>Hello</ows:Identifier>
+    <ows:Title>Return a hello message.</ows:Title>
+    <ows:Abstract>Create a welcome string.</ows:Abstract>
+  </wps:Process>
+  <wps:Status creationTime="2013-09-10T12:41:54Z">
+    <wps:ProcessSucceeded>Service "Hello" run successfully.</wps:ProcessSucceeded>
+  </wps:Status>
+  <wps:ProcessOutputs>
+    <wps:Output>
+      <ows:Identifier>Result</ows:Identifier>
+      <ows:Title>The resulting string</ows:Title>
+      <ows:Abstract>The hello message containing the input string</ows:Abstract>
+      <wps:Data>
+        <wps:LiteralData dataType="string">{'Result': {'dataType': 'string', 'inRequest': 'false'}}</wps:LiteralData>
+      </wps:Data>
+    </wps:Output>
+  </wps:ProcessOutputs>
+</wps:ExecuteResponse>
