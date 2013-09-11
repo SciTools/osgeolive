@@ -4,17 +4,20 @@
     <script src="http://openlayers.org/api/OpenLayers.js"></script>
 </head>
 <body>
-    <div style="width:700px; height:400px" id="map"></div>
-    <p>Click on map to show time-series graph from WPS.</p>
+    <div style="width:800px; height:500px" id="map"></div>
+    <p>Click on the map to show a time-series graph from WPS.</p>
     <p>
-        <label for="agg">Aggregate</label>        
+        <select name="period" id="period" onchange="aggChange()">
+            <option value="3">3</option>
+            <option value="5">5</option>
+            <option value="10">10</option>
+            <option value="30">30</option>
+        </select>
+        year
         <select name="agg" id="agg" onchange="aggChange()">
-            <option value="mean_5">5 year average</option>
-            <option value="mean_10">10 year average</option>
-            <option value="mean_30">30 year average</option>
-            <option value="max_3">3 year maximum</option>
-            <option value="max_10">10 year maximum</option>
-            <option value="max_30">30 year maximum</option>
+            <option value="mean">mean</option>
+            <option value="max">maximum</option>
+            <option value="min">minimum</option>
         </select>
     </p>
 
@@ -23,7 +26,8 @@
         var wms = new OpenLayers.Layer.WMS("OpenLayers WMS",
             "http://vmap0.tiles.osgeo.org/wms/vmap0", {layers: 'basic'});
         map.addLayer(wms);
-        map.setCenter(new OpenLayers.LonLat(-95, 38), 4);  // Look at USA
+        // Look at FOSS4G 2013 (Nottingham, UK)
+        map.setCenter(new OpenLayers.LonLat(1.1333, 52.95), 4);
 
         var position = {};
 
@@ -54,7 +58,8 @@
                 ctx.drawImage(image, 0, 0);
             }
             var agg = document.getElementById('agg').value;
-            image.src = 'http://localhost/cgi-bin/zoo_loader.cgi?request=Execute&service=WPS&version=1.0.0&Identifier=RollingWindow&DataInputs=lat=' + position.lat + ';lon=' + position.lon + ';agg=' + agg + '&RawDataOutput=Result@mimeType=image/png';
+            var period = document.getElementById('period').value;
+            image.src = 'http://localhost/cgi-bin/zoo_loader.cgi?request=Execute&service=WPS&version=1.0.0&Identifier=RollingWindow&DataInputs=lat=' + position.lat + ';lon=' + position.lon + ';agg=' + agg + ';period=' + period + '&RawDataOutput=Result@mimeType=image/png';
         }
 
         map.events.register("click", map, function(e) {
