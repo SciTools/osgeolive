@@ -24,7 +24,7 @@ Workshop outline
    wcs_challenges
    osgeo_stack
 
-   advanced_wps
+   wps_first_steps
    advanced_wps_iris
 
    advanced_wxs
