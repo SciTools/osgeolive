@@ -20,6 +20,20 @@ XML that lists the capabilities available on this server. This XML is
 not intended for human consumption, so don't be put off by the apparent
 complexity!
 
+On OSGeo-Live, all the files used by ZOO are found in `/usr/lib/cgi-bin`.
+During this tutorial you will need to add/edit files in this directory,
+but by default this directory can only be modified with `root` user
+permissions. So to avoid the need to use the `root` user or `sudo`, you
+should modify the permission for the directory to allow anyone to update
+the contents.
+
+.. code-block:: bash
+
+   sudo chmod o+w /usr/lib/cgi-bin
+
+NB. This is a hack to simplify the tutorial. You should never use this
+technique in real life!
+
 .. admonition:: Technical note:
 
    On OSGeo Live, making a request to http://localhost/zoo (/var/www/zoo/)
