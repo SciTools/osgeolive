@@ -37,4 +37,4 @@ def main(path):
 
 
 if __name__ == '__main__':
-    main('/data/local/cpelley/tmp_data/FOSS4G')
+    main('data/map_gallery')
