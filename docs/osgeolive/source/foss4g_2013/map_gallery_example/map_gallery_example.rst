@@ -1,17 +1,12 @@
-=====================
-Working with Big Data
-=====================
-
 Visualisation
--------------
-
+=============
 
 Animation
 ---------
-This exercise is split into two: The first is the animation of pressure contours with time; The later is a more advanced custom animation, over-plotting various information.
+This example is split into two: The first is the animation of pressure contours with time; The later is a more advanced custom animation, over-plotting various information.
 
-Exercise 1
-**********
+Example 1
+*********
 .. image:: wind_simple.png
     :width: 600px
     :align: center
@@ -26,7 +21,7 @@ Exercise 1
 
 .. literalinclude:: wind_simple.py
 
-Exercise 2
+Example 2
 **********
 
 .. image:: wind_extended.png
