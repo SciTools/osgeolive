@@ -1,6 +1,6 @@
 <html>
 <head>
-    <title>OpenLayers Example</title>
+    <title>OpenLayers and WPS</title>
     <script src="http://openlayers.org/api/OpenLayers.js"></script>
 </head>
 <body>
@@ -27,7 +27,7 @@
             "http://vmap0.tiles.osgeo.org/wms/vmap0", {layers: 'basic'});
         map.addLayer(wms);
         // Look at FOSS4G 2013 (Nottingham, UK)
-        map.setCenter(new OpenLayers.LonLat(1.1333, 52.95), 4);
+        map.setCenter(new OpenLayers.LonLat(-1.1333, 52.95), 4);
 
         var position = {};
 
