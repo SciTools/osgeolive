@@ -8,33 +8,17 @@
 # Execution of the script will then download (clone) the osgeolive repository
 # as well as other data that is needed for the workshop.
 #
-# This version of the workshop_setup script also fixes a bug on OSGeo Live 7.0
- 
- 
+# This version of the workshop_setup script also calls a modified version
+# of install_iris.sh to update both Iris and Cartopy, and also fixes a bug
+# that exists on OSGeo Live 7.0 with NetCDF4 support.
+
+sudo bash ./install_iris2.sh 
+
 # Install git
 apt-get install -y git
  
-# Replace the build and dev packages that were removed to keep the Live ISO small
-apt-get install -y python-dev libhdf5-serial-dev libnetcdf-dev \
-libgeos-dev libproj-dev \
-libjasper-dev libfreetype6-dev libpng-dev tk-dev
- 
-echo "Fixing NetCDF4 support on OSGeo Live 7.0 (pip was broken at time of freeze)"
-pip install -I netCDF4==1.0.4
- 
-echo "Allow MatplotLib to default to the most recent (was locked to 1.2.0 in Live 7.0)"
-easy_install -U distribute
-pip install matplotlib --upgrade
- 
-# Replace the Cartopy data and examples that were also removed
-mkdir -p ~/git
-cd ~/git
-git clone https://github.com/SciTools/cartopy.git
-mv cartopy/lib/cartopy/data /usr/local/lib/python2.7/dist-packages/cartopy/data
-mv cartopy/lib/cartopy/examples /usr/local/lib/python2.7/dist-packages/cartopy/examples
-rm -rf ~/git/cartopy
- 
 echo "Downloading and build workshop material"
+mkdir -p ~/git
 cd ~/git
 git clone https://github.com/SciTools/osgeolive.git
 cd ~/git/osgeolive/docs/osgeolive
@@ -49,8 +33,10 @@ cd ~/git
 git clone http://github.com/SciTools/iris-sample-data.git
 mkdir -p ~/iris_workshop/data
 ln -s ~/git/iris-sample-data/sample_data ~/iris_workshop/data/sample_data
- 
-# Fix up Iris site.cfg so that location of sample data is know
+# Also link sample_data to default location
+ln -s ~/git/iris-sample-data/sample_data /usr/local/lib/python2.7/dist-packages/Iris-1.5.0-py2.7-linux-i686.egg/iris/sample_data
+
+# Fix up Iris site.cfg so that location of sample data is known
 echo """[System]
 udunits2_path = /usr/lib/i386-linux-gnu/libudunits2.so
  
@@ -68,7 +54,7 @@ import rlcompleter, readline
 readline.parse_and_bind('tab:complete')
 """ > ~/.pythonrc
 echo "export PYTHONSTARTUP=~/.pythonrc" >> ~/.bashrc
- 
+export PYTHONSTARTUP=~/.pythonrc
  
 echo "Get World shapefile data for testing"
 mkdir -p ~/iris_workshop/data/qgis/
@@ -82,6 +68,6 @@ ln -s ~/data/netcdf ~/iris_workshop/data/netcdf
 
 sudo chown -R user: git iris_workshop
  
-echo "Launch the Iris workshop introduction now (and on future boot)"
-echo "firefox ~/iris_workshop/docs/index.html &" >> .bashrc
-firefox ~/iris_workshop/docs/index.html &
+echo "Add Iris workshop icon and GeoViz icon to desktop"
+# echo "firefox ~/iris_workshop/docs/index.html &" >> ???
+# ???

@@ -13,6 +13,7 @@ Navigate to *Applications* > *Accessories* > *Terminal Emulator*, and enter the 
 .. code-block:: python
 
    wget https://raw.github.com/SciTools/osgeolive/master/tools/workshop_setup.sh
+   wget https://raw.github.com/SciTools/osgeolive/master/tools/install_iris2.sh
    sudo bash ./workshop_setup.sh
 
 This script makes a number of changes to your OSGeo Live setup, including:
