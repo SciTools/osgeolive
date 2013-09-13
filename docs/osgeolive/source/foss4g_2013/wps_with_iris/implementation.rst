@@ -1,6 +1,8 @@
+:orphan:
+
 =================
 rolling_window.py
 =================
 
-.. include:: ../../solutions/zoo_rolling_window/rolling_window.py
-    :code: python
+.. literalinclude:: ../../solutions/zoo_rolling_window/rolling_window.py
+    :language: python

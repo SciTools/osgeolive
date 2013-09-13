@@ -1,6 +1,8 @@
+:orphan:
+
 ==============
 tile_server.py
 ==============
 
-.. include:: ../../solutions/tile_server/tile_server.py
-    :code: python
+.. literalinclude:: ../../solutions/tile_server/tile_server.py
+    :language: python

@@ -1,6 +1,8 @@
+:orphan:
+
 =========
 demo.html
 =========
 
-.. include:: ../../solutions/zoo_rolling_window/demo.html
-    :code: html
+.. literalinclude:: ../../solutions/zoo_rolling_window/demo.html
+    :language: html
