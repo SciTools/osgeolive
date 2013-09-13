@@ -87,7 +87,7 @@ list.
    :language: javascript
    :lines: 20-24
 
-Your completed web page should look like
+Your completed web page code should look like
 :doc:`this <open_layers_resources/map>`.
 
 Reload the map in your browser and you will see:
