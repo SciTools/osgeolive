@@ -5,6 +5,18 @@ Publishing data to GeoServer
 This example publishes an Iris cube to geoserver, then plots the new WMS.
 
 
+Geoserver
+---------
+You can start GeoServer from the Xubuntu desktop by navigating to:
+
+	Geospatial > Web Services > GeoServer > Start GeoServer
+
+This tutorial controlls GeoServer programatically
+but there is also a web interface available here:
+
+	http://localhost:8082/geoserver/web/
+ 
+
 Load some data
 --------------
 Let's load some global temperature data from a PP file.
@@ -13,7 +25,9 @@ This will give us a 2D horizontal "cube".
 .. code-block:: python
 
     import iris
-    cube = iris.load_cube("global.pp")
+    
+    filename = iris.sample_data_path("A1B.2098.pp")
+    cube = iris.load_cube(filename)
 
 
 Convert to GeoTIFF
@@ -32,19 +46,19 @@ We'll need to add "bounds" to our latlon coordinates first.
 
 Publish to GeoServer
 --------------------
-Using our little helper functions in XXXXXXXX REFERENCE THE CODE HERE XXXXXXXX
+Using our little helper functions in geopub.py, 
 we can connect to geoserver and create a "Coverage Store" for raster data.
 
 .. code-block:: python
 
     from geopub import *
 
-    server = "http://exxgisres1:8080/geoserver"
+    server = "localhost:8082"
     workspace = "iris_test_ws"
     coveragestore = "iris_test_cs"
     filename = "file.geotiff"
 
-    connect_to_server(server, 'peoplesearch', '!peoplesearch')
+    connect_to_server(server, 'admin', 'geoserver')
     create_workspace(server, workspace)  # fail if exist
     create_coveragestore(server, workspace, coveragestore)   # fail if exist
     data = open('temp.geotiff', "rb").read()

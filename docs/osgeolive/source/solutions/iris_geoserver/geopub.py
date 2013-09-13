@@ -123,7 +123,8 @@ def wms_image(server, layers):
 def runme():
 
     # Load a cube into Iris
-    cube = iris.load_cube("global.pp")
+    filename = iris.sample_data_path("A1B.2098.pp")
+    cube = iris.load_cube(filename)
     cube.coord(axis="x").guess_bounds()
     cube.coord(axis="y").guess_bounds()
 
@@ -137,8 +138,8 @@ def runme():
     data = open('temp.geotiff', "rb").read()
 
     # Publish to geoserver
-    server = "http://exxgisres1:8080/geoserver"
-    username, password = 'peoplesearch', '!peoplesearch'
+    server = "localhost:8082"
+    username, password = 'admin', 'geoserver'
     connect_to_server(server, username, password)
 
     workspace = "iris_test_ws"
