@@ -2,16 +2,16 @@
 Publishing data to GeoServer
 ============================
 
-This example publishes an Iris cube to geoserver, then plots the new WMS.
+This example publishes an Iris cube to GeoServer, then plots the new WMS.
 
 
-Geoserver
+GeoServer
 ---------
 You can start GeoServer from the Xubuntu desktop by navigating to:
 
 	Geospatial > Web Services > GeoServer > Start GeoServer
 
-This tutorial controlls GeoServer programatically
+This tutorial controls GeoServer programatically
 but there is also a web interface available here:
 
 	http://localhost:8082/geoserver/web/
@@ -47,7 +47,7 @@ We'll need to add "bounds" to our latlon coordinates first.
 Publish to GeoServer
 --------------------
 Using our little helper functions in geopub.py, 
-we can connect to geoserver and create a "Coverage Store" for raster data.
+we can connect to GeoServer and create a "Coverage Store" for raster data.
 
 .. code-block:: python
 
@@ -59,9 +59,12 @@ we can connect to geoserver and create a "Coverage Store" for raster data.
     filename = "file.geotiff"
 
     connect_to_server(server, 'admin', 'geoserver')
-    create_workspace(server, workspace)  # fail if exist
-    create_coveragestore(server, workspace, coveragestore)   # fail if exist
-    data = open('temp.geotiff', "rb").read()
+    # The following will fail if the workspace or coveragestore
+    # already exist.
+    create_workspace(server, workspace)
+    create_coveragestore(server, workspace, coveragestore)
+    with open('temp.geotiff', "rb") as filein:
+        data = filein.read()
     upload_file(server, workspace, coveragestore, filename, data)
 
 GeoServer creates a "coverage" object and a "layer" for us too.
@@ -85,7 +88,8 @@ If GeoServer doesn't get correct geographic information, we can correct it.
                 '</nativeBoundingBox>'\
                 '<enabled>true</enabled>'\
             '</coverage>'
-    update_coverage(server, workspace, coveragestore, coveragestore, data)
+    update_coverage(server, workspace, coveragestore,
+                    coveragestore, data)
 
 
 Access via WMS
@@ -99,8 +103,10 @@ then request a background jpeg from our new WMS.
     import cartopy.crs as ccrs
     import matplotlib.pyplot as plt
 
-    wms_server = '{server}/{workspace}/wms?service=WMS'.format(server=server, workspace=workspace)
-    layers = '{workspace}:{coveragestore}'.format(workspace=workspace, coveragestore=coveragestore)
+    wms_server = '{server}/{workspace}/wms?service=WMS'.format(
+        server=server, workspace=workspace)
+    layers = '{workspace}:{coveragestore}'.format(
+        workspace=workspace, coveragestore=coveragestore)
 
     plt.axes(projection=ccrs.PlateCarree())
     plt.gca().set_extent([-40, 40, 20, 80])
