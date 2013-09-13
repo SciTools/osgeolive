@@ -66,8 +66,8 @@ Declaring your service
 First, you need to create your own version of `Hello.zcfg`. Remember,
 all the files for ZOO services are located in `/usr/lib/cgi-bin/`.
 
-.. include:: ../solutions/zoo_helloworld/Hello.zcfg
-    :code: xml
+.. literalinclude:: ../solutions/zoo_helloworld/Hello.zcfg
+    :language: xml
 
 This file declares a new ZOO service named "Hello", which accepts the
 parameter "name" (which must be a string) and returns a value called
@@ -105,8 +105,8 @@ To get more details of the Hello service, make a DescribeProcess request:
 
 This will return the full description from Hello.zcfg as an XML document:
 
-.. include:: hello_description.xml
-    :code: xml
+.. literalinclude:: hello_description.xml
+    :language: xml
 
 Providing the engine
 ^^^^^^^^^^^^^^^^^^^^
@@ -176,8 +176,8 @@ you need to place the outgoing result in `outputs['Result']['value']`.
 
 Your function should look something like:
 
-.. include:: ../solutions/zoo_helloworld/test_service.py
-    :code: python
+.. literalinclude:: ../solutions/zoo_helloworld/test_service.py
+    :language: python
 
 Testing the service
 ^^^^^^^^^^^^^^^^^^^
@@ -189,8 +189,8 @@ To see your service in action, the simplest request is:
 This will return an XML document which contains the output of your
 `Hello()` function embedded within it. For example:
 
-.. include:: hello_response.xml
-    :code: python
+.. literalinclude:: hello_response.xml
+    :language: python
 
 .. note::
 

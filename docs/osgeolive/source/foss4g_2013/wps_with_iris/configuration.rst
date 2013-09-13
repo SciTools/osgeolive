@@ -1,6 +1,8 @@
+:orphan:
+
 ==================
 RollingWindow.zcfg
 ==================
 
-.. include:: ../../solutions/zoo_rolling_window/RollingWindow.zcfg
-    :code: html
+.. literalinclude:: ../../solutions/zoo_rolling_window/RollingWindow.zcfg
+    :language: html

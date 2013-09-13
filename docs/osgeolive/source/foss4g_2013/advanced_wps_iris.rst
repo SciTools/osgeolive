@@ -69,7 +69,8 @@ Your final configuration file should look something like
 
 As in the previous example, you can check that ZOO has been able to read
 your configuration file by making a `DescribeProcess` request:
-   http://localhost/cgi-bin/zoo_loader.cgi?request=DescribeProcess&service=WPS&version=1.0.0&Identifier=RollingWindow
+
+    http://localhost/cgi-bin/zoo_loader.cgi?request=DescribeProcess&service=WPS&version=1.0.0&Identifier=RollingWindow
 
 
 Building the engine
@@ -131,6 +132,7 @@ With the core function in-place and working, it's time to provide the
 ZOO-specific wrapper. As with the previous example, this needs a Python
 function that takes three arguments: `config, inputs, outputs`. And it's
 the job of this function to:
+
  * Validate and interpret incoming values.
  * Call your core function.
  * Return the plot as a the bytes for a PNG.
@@ -190,6 +192,7 @@ Putting it all together
 
 Now that you have a working WPS graphing service, the final piece of
 the puzzle is to provide a web page containing:
+
  * An OpenLayers map (as discussed in a previous example).
  * HTML controls to specify the period and aggregation for the graph.
  * JavaScript to request graph images from your service.
@@ -220,7 +223,7 @@ construct the URL "by hand" and substitute the parameter values:
 
     wps_url = 'http://localhost/cgi-bin/zoo_loader.cgi?request=Execute&service=WPS&version=1.0.0&Identifier=RollingWindow&DataInputs=lat=' + position.lat + ';lon=' + position.lon + ';agg=' + agg + ';period=' + period + '&RawDataOutput=Result@mimeType=image/png';
 
-Your final web page might look something like
+Your final web page code might look something like
 :doc:`this <wps_with_iris/web_page>`. (NB. This page contains additional
 JavaScript to use an OpenLayers pop-up, and automatically update the
 graph when the user chooses a new value for either SELECT control.)
