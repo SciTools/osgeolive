@@ -59,7 +59,7 @@ available types are: ROADMAP, SATELLITE, and HYBRID.
    :language: javascript
    :lines: 12-18,24-31
 
-Finally, you should arange for the your JavaScript function to be
+Finally, you should arange for the JavaScript function to be
 called once the page has finished loading, by using the `onload` event
 on the `<body>` element.
 
@@ -95,7 +95,7 @@ Reload the map in your browser and you will see:
 .. image:: open_layers_resources/map2.png
 
 OpenLayers displays all the pink tiles to indicate it is unable to
-retrieve the tiles from the given location. Obviously that's because
+retrieve the tiles from the given location. This is because
 the tile server doesn't exist yet...
 
 
@@ -203,7 +203,7 @@ attempting to plot it.
 
 Having loaded some appropriate data, you can plot it using the
 functions in the `iris.plot` module. The `pcolormesh()`, `contour`, and
-`contourf` functions are very good starting point.
+`contourf` functions are a very good starting point.
 
 You'll need to add something like the following to your `draw()`
 function.
