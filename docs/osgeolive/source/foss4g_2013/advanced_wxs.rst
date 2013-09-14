@@ -1,10 +1,13 @@
 
-OGC Web Services (WxS) with ZOO and MapServer
----------------------------------------------
+OGC Web Services (WxS) with Iris, ZOO and MapServer
+---------------------------------------------------
 
-With Iris, GDAL and ZOO (with bundled MapServer), we can expose WxS services
+This final section, intended for anyone who completes the workshop in under
+4 hours, invites you to explore the options for exposing a suite of OGC Web
+Services by using the combined capabilities of Iris, ZOO and MapServer.
 
-- WMS
-- WCS
+.. admonition:: Hint
 
+   Explore the ZOO-Project documentation for ways to adjust your .zcfg
+   configuration file to expose WxS outputs via MapServer
 
