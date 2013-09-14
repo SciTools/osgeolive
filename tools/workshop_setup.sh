@@ -12,7 +12,9 @@
 # of install_iris.sh to update both Iris and Cartopy, and also fixes a bug
 # that exists on OSGeo Live 7.0 with NetCDF4 support.
 
+wget https://raw.github.com/SciTools/osgeolive/master/tools/install_iris2.sh
 sudo bash ./install_iris2.sh 
+rm ./install_iris2.sh
 
 # Install git
 apt-get install -y git
@@ -67,7 +69,9 @@ echo "Linking OSGeo Live NetCDF sample data"
 ln -s ~/data/netcdf ~/iris_workshop/data/netcdf
 
 sudo chown -R user: git iris_workshop
- 
-echo "Add Iris workshop icon and GeoViz icon to desktop"
-# echo "firefox ~/iris_workshop/docs/index.html &" >> ???
-# ???
+
+# Note: installing and building PySide dependancy is slow
+wget https://raw.github.com/SciTools/osgeolive/master/tools/install_cubeviz.sh
+sudo bash ./install_cubeviz.sh 
+rm ./install_cubeviz.sh
+
