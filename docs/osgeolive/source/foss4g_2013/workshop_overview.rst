@@ -18,7 +18,6 @@ In this workshop we will introduce Iris, along with interesting multi-dimensiona
 .. toctree::
    :maxdepth: 2
 
-   what_is_iris
    intro_iris
 
 **Integrating with the OSGeo stack**
