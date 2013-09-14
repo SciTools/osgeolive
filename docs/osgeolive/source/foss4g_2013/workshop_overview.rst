@@ -11,7 +11,6 @@ In this workshop we will introduce Iris, along with interesting multi-dimensiona
 
    what_is_big_data
    wcs_challenges
-   working_with_big_data
 
 
 **Working with Iris**
