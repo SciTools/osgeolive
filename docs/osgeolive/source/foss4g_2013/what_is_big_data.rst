@@ -92,6 +92,7 @@ a cube's data array and therefore, by definition, its phenomenon.
  * Each coordinate has a name and a unit.
  * When a coordinate is added to a cube, the data dimensions that it
    represents are also provided.
+
     * The shape of a coordinate is always the same as the shape of the
       associated data dimension(s) on the cube.
     * Each dimension of a coordinate must be mapped to a data dimension.

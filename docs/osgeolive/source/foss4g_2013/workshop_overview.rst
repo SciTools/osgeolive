@@ -20,17 +20,30 @@ In this workshop we will introduce Iris, along with interesting multi-dimensiona
 
    intro_iris
 
-**Integrating with the OSGeo stack**
+**Integrating Iris with the OSGeo stack**
 
 .. toctree::
    :maxdepth: 2
 
-   osgeo_stack
+   iris_qgis
+   open_layers
+   geoserver
+
+**Working with OGC services**
+
+.. toctree::
+   :maxdepth: 2
 
    wps_first_steps
    advanced_wps_iris
+   advanced_wxs
 
-.. todo:: advanced_wxs
+**Thank you**
+
+.. toctree::
+   :maxdepth: 1
+
+   conclusion
 
 .. note::
 
