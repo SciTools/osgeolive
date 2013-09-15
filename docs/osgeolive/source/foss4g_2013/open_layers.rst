@@ -45,7 +45,7 @@ which you will pass to OpenLayers to allow it to find it.
    :language: html
    :lines: 35
 
-Also within the `<head>` element you need to defined a `<script>`
+Also within the `<head>` element you need to define a `<script>`
 element containing a JavaScript function which will create the map.
 This function needs to construct an `OpenLayers.Map` instance using the
 `id` of the place-holder element and an options object. The options
@@ -116,7 +116,7 @@ tiles. The class `cartopy.io.img_tiles.GoogleTiles` provides:
 
 Using these, and a couple of tweaks to ensure Cartopy will correctly
 render tiles containing transparency, you can quickly define a tile
-server with the following code:
+server with the following code in a new file:
 
 .. literalinclude:: ../solutions/tile_server/tile_server.py
    :lines: 1-39
@@ -156,8 +156,8 @@ need to:
 
 - Provide a function to do the drawing which takes a single GeoAxes
   parameter.
-- Modify the call to the `tile_server()` function to pass your draw
-  function.
+- In your python file, modify the call to the `tile_server()` function
+  to pass your draw function.
 
 For example:
 
@@ -189,9 +189,9 @@ Gridded data
 ^^^^^^^^^^^^
 
 Now it's time to add some gridded data to the tile server output. For
-this you can use Iris to load some data and plot it. One of the benefits
+this you can use Iris to load some data and plot them. One of the benefits
 of using Iris is that it will automatically pass the appropriate
-projection parameters to cartopy to ensure the data is rendered
+projection parameters to cartopy to ensure the data are rendered
 correctly.
 
 To get started, you can use the `iris.sample_data_path()` function to
@@ -201,12 +201,12 @@ different dataset, take care to ensure you have a data selection which
 is suitable for a map (i.e. horizontal and two-dimensional) before
 attempting to plot it.
 
-Having loaded some appropriate data, you can plot it using the
+Having loaded some appropriate data, you can plot them using the
 functions in the `iris.plot` module. The `pcolormesh()`, `contour`, and
 `contourf` functions are a very good starting point.
 
 You'll need to add something like the following to your `draw()`
-function.
+function in your python code.
 
 .. code-block:: python
 
