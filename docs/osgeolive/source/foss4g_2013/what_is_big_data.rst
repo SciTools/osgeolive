@@ -2,8 +2,8 @@
 What is Big Data?
 =================
 
-There is currenly no commonly accepted definition of "big data", but data
-receiving this label tends to have a combination of the following
+There is currently no commonly accepted definition of "big data", but data
+receiving this label tend to have a combination of the following
 characteristics [#f1]_:
 
 - Volume - Large amounts of data are stored and analysed
@@ -25,7 +25,7 @@ Iris: A tool for working with big data
 --------------------------------------
 
 Iris is a powerful, easy to use, and community-driven Python library for
-analysing and visualising multi-dimensional data sets.
+analysing and visualising multi-dimensional datasets.
 
 With Iris you can:
 
@@ -39,7 +39,7 @@ analysis and visualisation as easy as possible.
 
 Cartopy makes use of the powerful PROJ.4, numpy and shapely libraries and has
 a simple and intuitive drawing interface to Python's matplotlib for creating
-publication quality maps.
+publication-quality maps.
 
 Cartopy contains:
 
@@ -90,17 +90,11 @@ A coordinate stores metadata about some dimension(s) of
 a cube's data array and therefore, by definition, its phenomenon.
 
  * Each coordinate has a name and a unit.
- * When a coordinate is added to a cube, the data dimensions that it
-   represents are also provided.
-
-    * The shape of a coordinate is always the same as the shape of the
-      associated data dimension(s) on the cube.
-    * Each dimension of a coordinate must be mapped to a data dimension.
-      The only coordinates with no mapping are scalar coordinates.
-      
+ * Each dimension of a coordinate must be mapped to a data dimension (the only
+   coordinates with no mapping are scalar coordinates).
  * Depending on the underlying data that the coordinate is representing,
    its values may be discrete points or be bounded to represent interval
-   extents (e.g. temperature at *point x* **vs** rainfall accumulation
+   extents (e.g. temperature at *point x* or rainfall accumulation
    *between 0000-1200 hours*).
  * More complex coordinates may contain a coordinate system which is
    necessary to fully interpret the values contained within the coordinate.
@@ -121,7 +115,7 @@ both in the CF-conventions, and in the Iris data model.
 A cube consists of:
 
  * a standard name and/or a long name and an appropriate unit
- * a data array who's values are representative of the phenomenon
+ * a data array whose values are representative of the phenomenon
  * a collection of coordinates and associated data dimensions on the cube's
    data array, which are split into two separate lists:
 
@@ -140,7 +134,7 @@ A simple cube example
 ---------------------
 
 Suppose we have some gridded data which has 24 air temperature readings
-(in Kelvin) which is located at 4 different longitudes, 2 different latitudes
+(in Kelvin) which are located at 4 different longitudes, 2 different latitudes
 and 3 different heights. Our data array can be represented pictorially: 
 
 .. image:: images/multi_array.png
@@ -160,8 +154,8 @@ The Iris cube to represent this data would consist of:
  
     * a standard name of ``latitude`` and unit of ``degrees``
     * an array of length 2 representing the 2 latitude points
-    * a coordinate system such that the ``latitude`` points could be fully 
-      located on the globe
+    * a coordinate system such that the ``latitude`` points are located on the
+      globe
     
  * a coordinate, mapping to dimension 2, consisting of:
  

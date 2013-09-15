@@ -75,7 +75,7 @@ parameter "name" (which must be a string) and returns a value called
 
 The `serviceType` parameter tells ZOO to use Python to process the
 request. The `serviceProvider` parameter defines which Python file
-contains the code to execute. And the name of the servce ("Hello" in
+contains the code to execute. And the name of the service ("Hello" in
 this case) defines the name of the Python function that ZOO will
 execute. For our example, ZOO is performing the equivalent of:
 

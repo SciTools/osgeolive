@@ -13,7 +13,7 @@ time-series graph for that location.
 To enable this interface, you will build a WPS service which returns a
 time-series graph for a given latitude/longitude point. The user of the
 service will also specify a rolling-window operation to apply along the
-time axis of the data before it is plotted. For example, the user might
+time axis of the data before they are plotted. For example, the user might
 choose to apply a 30-year rolling mean, or a 5-year rolling maximum.
 
 This example will use a global time-series dataset that is bundled with
@@ -118,7 +118,7 @@ control how often you want ticks to sort this out:
 
 Now that you have your core function, you might like to add the ability
 to test your function from the command line. Using the standard Python
-idom you will need something like:
+idiom you will need something like:
 
 .. code-block:: python
 
@@ -135,7 +135,7 @@ the job of this function to:
 
  * Validate and interpret incoming values.
  * Call your core function.
- * Return the plot as a the bytes for a PNG.
+ * Return the plot as the raw data bytes for a PNG image.
 
 To deal with the incoming values, you will need to extract the `"value"`
 key from each of your inputs and convert it to the form needed by your
@@ -147,7 +147,7 @@ the job:
 
    lat = float(inputs(['lat']['value'])
 
-Having parsed you input values and called your core function, you now
+Having parsed your input values and called your core function, you now
 need to render your plot as a PNG and place the resulting bytes in
 `outputs['Result']['value']`. (NB. ZOO will take care of base64 encoding
 the bytes in the result value.) In versions of Python 2.7 and above you

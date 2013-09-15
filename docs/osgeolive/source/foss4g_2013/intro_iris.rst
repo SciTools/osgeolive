@@ -8,9 +8,9 @@ Cubeviz graphical user interface.
 Cubeviz
 -------
 
-Cubeviz is a lightweight visulisation tool designed for use with Iris
+Cubeviz is a lightweight visualisation tool designed for use with Iris
 and Cartopy. It allows you to quickly and easily load a file, and then
-view plots of the cube data that is contained within it.
+view plots of the cube data that are contained within it.
 
 You are able to select which cube from the file you would like to plot,
 and, for cubes with more than two dimensions, you are able to choose to
@@ -37,7 +37,7 @@ The main window can be broken down into a few main segments
 Loading data
 ------------
 
-We will start with a simple 2D cube which holds data on gloabl air
+We will start with a simple 2D cube which holds data on global air
 temperature.
 
 .. image:: images/cubeviz/tute1.PNG
@@ -121,7 +121,7 @@ Click on the Select Projection box to change the display projection.
 
    The Cartopy plotting engine, originally developed for Iris, is still a
    relatively new project. The implementation of some projections is
-   currently tempremental, therefore some of the available projections
+   currently temperamental, therefore some of the available projections
    have been temporarily removed from Cubeviz.
 
    If you find plotting errors when using Cubeviz, please consider raising
@@ -148,7 +148,7 @@ More complex cubes
 ------------------
 
 In this next example, we are going to load a four dimensional cube. Following
-the same method as before, this time load the 'A1B north america.nc' file.
+the same method as before, this time load the 'A1B_north_america.nc' file.
 
 If we now look at the cube information section, and flick between the tabs,
 we can see that there is now a difference between the full cube and cube slice
@@ -166,9 +166,8 @@ update (or press your Enter key) to plot the new graph.
 
 .. image:: images/cubeviz/tute12.PNG
 
-Notice that now many of the options have been removed. For example
-you now cannot plot coastlines or change the projection. This is because the
-plot is no longer a lat/lon plot, so these options would make no sense.
+Notice that now some of the options have been removed, for example you can
+no longer plot coastlines or change the projection.
 
 Stepping through a dimension
 ----------------------------
@@ -206,14 +205,14 @@ be the maximum value across all of the slices, and blue to be the minimum
 across all of the slices.
 
 You are also able to specify your own range for the colorbar by clicking
-the manual botton in the Colorbar Range window and then changing the
-max and min values. Try this now a see what effect this has.
+the manual button in the Colorbar Range window and then changing the
+max and min values. Try this now to see what effect this has.
 
 Selecting a cube from a file
 ----------------------------
 
 Some files may contain more than one cube, try opening a four dimensional
-cube such as the 'uk hires.pp' found in the Iris Sample Data folder.
+cube such as the 'uk_hires.pp' found in the Iris Sample Data folder.
 
 Looking at the Select Cube box, you will see that unlike in the last example,
 this box is now enabled. Click it, and you will see that you now have a choice
