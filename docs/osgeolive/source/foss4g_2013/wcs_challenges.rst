@@ -4,7 +4,7 @@ Challenges of WCS 2.0
 
 The OGC Web Coverage Service (WCS) defines a useful standard for retrieving
 subsets of 'raw' data from big data archives [#f1]_. As large multi-dimensional
-datasets becomes more common, the requirement for WCS 2.0 support will become
+datasets become more common, the requirement for WCS 2.0 support will become
 more widespread.
 
 .. image:: images/WCS_operations.png
@@ -24,7 +24,7 @@ emerge at varying levels of implementation.
   and software are required
 - Service developers - when developing services that make use of big data,
   the most efficient implementations need to be delivered
-- Users - when multi-dimensional data is returned, users require specialist
+- Users - when multi-dimensional data are returned, users require specialist
   tools that allow them to efficiently work with the received data
 
 These challenges can be addressed by Iris - an open source software library
@@ -37,7 +37,7 @@ The WPS option
 - WCS - Move the data to where the processing occurs (client)
 - WPS - Moving the processing to where the data exists (server)
 
-Imagine that you have an algoritm that determines the maximum value in any
+Imagine that you have an algorithm that determines the maximum value in any
 given dataset by looping over all values and recording the maximum that is
 found. To apply this process to big data via WCS would first require you
 to download the entire dataset. But, by moving the process to the server, and
@@ -51,11 +51,11 @@ Utilising Iris
 --------------
 
 The open source Iris python package is a useful library to consider both for
-implementating, and for working with, WCS and WPS services, as well as being a
+implementing, and for working with, WCS and WPS services, as well as being a
 valuable scientific analysis and visualisation environment for use on the
 desktop.
 
-In this workshop We will look in detail at various examples of integrating
+In this workshop we will look in detail at various examples of integrating
 Iris with other software on OSGeo Live, before culminating with
 an example of using Iris with ZOO-Project to deliver WPS services.
 
