@@ -71,7 +71,8 @@ ln -s ~/data/netcdf ~/iris_workshop/data/netcdf
 sudo chown -R user: git iris_workshop
 
 # Note: installing and building PySide dependancy is slow
-wget https://raw.github.com/SciTools/osgeolive/master/tools/install_cubeviz.sh
-sudo bash ./install_cubeviz.sh 
-rm ./install_cubeviz.sh
+#wget https://raw.github.com/SciTools/osgeolive/master/tools/install_cubeviz.sh
+#sudo bash ./install_cubeviz.sh 
+#rm ./install_cubeviz.sh
+wget https://gist.github.com/iedwards/6578183/raw/f64d5620bf32a4eb5cd11bcbd526de7d3e9aa5c3/usethisone
 
