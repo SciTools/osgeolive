@@ -15,6 +15,8 @@
 #Settings for University of Nottingham
 echo 'export http_proxy="http://128.243.253.109:8080"' >> /etc/environment
 echo 'export http_proxy="http://128.243.253.109:8080"' >> /etc/bash.bashrc
+export http_proxy="http://128.243.253.109:8080"
+export http_proxy="http://128.243.253.109:8080"
 
 wget https://raw.github.com/SciTools/osgeolive/master/tools/install_iris2.sh
 sudo bash ./install_iris2.sh 
