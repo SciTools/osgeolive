@@ -12,6 +12,10 @@
 # of install_iris.sh to update both Iris and Cartopy, and also fixes a bug
 # that exists on OSGeo Live 7.0 with NetCDF4 support.
 
+#Settings for University of Nottingham
+echo 'export http_proxy="http://128.243.253.109:8080"' >> /etc/environment
+echo 'export http_proxy="http://128.243.253.109:8080"' >> /etc/bash.bashrc
+
 wget https://raw.github.com/SciTools/osgeolive/master/tools/install_iris2.sh
 sudo bash ./install_iris2.sh 
 rm ./install_iris2.sh
@@ -75,10 +79,3 @@ sudo chown -R user: git iris_workshop
 #sudo bash ./install_cubeviz.sh 
 #rm ./install_cubeviz.sh
 wget https://gist.github.com/iedwards/6578183/raw/f64d5620bf32a4eb5cd11bcbd526de7d3e9aa5c3/usethisone
-
-#Settings for University of Nottingham
-echo 'export http_proxy="http://128.243.253.109:8080"' >> /etc/environment
-echo 'export http_proxy="http://128.243.253.109:8080"' >> /etc/bash.bashrc
-
-
-
