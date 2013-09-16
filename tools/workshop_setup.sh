@@ -47,7 +47,7 @@ sample_data_repository = /home/user/git/iris-sample-data/sample_data
 """ > /usr/local/lib/python2.7/dist-packages/Iris-1.4.0-py2.7-linux-i686.egg/iris/etc/site.cfg
  
 echo "Setting keyboard to UK now, and for next boot"
-echo "setxkbmap gb" >> ~/bash.rc
+echo "setxkbmap gb" >> ~/.bashrc
 setxkbmap gb
  
 echo "Enable auto-complete in the python interpreter"
