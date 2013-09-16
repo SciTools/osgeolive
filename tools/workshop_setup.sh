@@ -64,9 +64,9 @@ export PYTHONSTARTUP=~/.pythonrc
  
 echo "Get World shapefile data for testing"
 mkdir -p ~/iris_workshop/data/qgis/
-cd ~/iris_workshop/data/qgis/
-wget http://thematicmapping.org/downloads/TM_WORLD_BORDERS-0.3.zip
-unzip TM_WORLD_BORDERS-0.3.zip
+#cd ~/iris_workshop/data/qgis/
+#wget http://thematicmapping.org/downloads/TM_WORLD_BORDERS-0.3.zip
+#unzip TM_WORLD_BORDERS-0.3.zip
 cd ~
  
 echo "Linking OSGeo Live NetCDF sample data"
