@@ -226,7 +226,7 @@ Working with collapsed dimensions
 
 Switch back to the air potential temperature cube. You should now be able
 to see that we have filled one of our collapsed dimension slots. Checking the
-Cube Slice tab, you will see that the cube has been collapsed down onto the
+Plotted Slice tab, you will see that the cube has been collapsed down onto the
 value specified next to the collapsed dimension name.
 
 To change this value, simply select a new one from the drop down list.
